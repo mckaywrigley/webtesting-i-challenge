@@ -20,11 +20,12 @@ function fail(item) {
     return item;
   } else if (item.enhancement >= 15) {
     item.durability -= 10;
-    return item;
-  }
-  if (item.enhancement > 16) {
-    item.enhancement -= 1;
-    return item;
+    if (item.enhancement > 16) {
+      item.enhancement -= 1;
+      return item;
+    } else {
+      return item;
+    }
   }
 }
 
